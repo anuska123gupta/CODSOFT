@@ -1,3 +1,4 @@
+\'\'\'python
 # CODSOFT
 Repository for CODSOFT Data Science Internship tasks
 import pandas as pd
@@ -183,3 +184,4 @@ if 'Random Forest' in models:
 # best_model = best_rf_model # Or your chosen best model
 # joblib.dump(best_model, 'movie_rating_prediction_model.pkl')
 # print("\nBest model saved as movie_rating_prediction_model.pkl")
+\'\'\'
