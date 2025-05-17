@@ -47,6 +47,7 @@ plt.title('Distribution of Movie Ratings')
 plt.xlabel('Rating')
 plt.ylabel('Frequency')
 plt.show()
+plt.savefig('movie_ratings_distribution.png')
 
 # --- 3. Feature Engineering ---
 print("\n--- Feature Engineering ---")
@@ -185,3 +186,61 @@ if 'Random Forest' in models:
 # joblib.dump(best_model, 'movie_rating_prediction_model.pkl')
 # print("\nBest model saved as movie_rating_prediction_model.pkl")
 \'\'\'python
+
+Results for movie ratings prediction:
+
+--- Exploratory Data Analysis ---
+
+First 5 rows:
+                                 Name  Year  Duration  ...       Actor 1             Actor 2          Actor 3
+0                                      2019       120  ...      Manmauji              Birbal  Rajendra Bhatia
+1  #Gadhvi (He thought he was Gandhi)  2019       109  ...  Rasika Dugal      Vivek Ghamande    Arvind Jangid
+2                         #Homecoming  2021        90  ...  Sayani Gupta   Plabita Borthakur       Roy Angana
+3                             #Yaaram  2019       110  ...       Prateik          Ishita Raj  Siddhant Kapoor
+4                   ...And Once Again  2010       105  ...  Rajat Kapoor  Rituparna Sengupta      Antara Mali
+
+[5 rows x 10 columns]
+
+Dataset info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 15503 entries, 0 to 15502
+Data columns (total 10 columns):
+ #   Column    Non-Null Count  Dtype
+---  ------    --------------  -----
+ 0   Name      15503 non-null  object
+ 1   Year      15503 non-null  int64
+ 2   Duration  15503 non-null  int64
+ 3   Genre     15503 non-null  object
+ 4   Rating    15503 non-null  float64
+ 5   Votes     15503 non-null  int64
+ 6   Director  15503 non-null  object
+ 7   Actor 1   15503 non-null  object
+ 8   Actor 2   15503 non-null  object
+ 9   Actor 3   15503 non-null  object
+dtypes: float64(1), int64(3), object(6)
+memory usage: 1.2+ MB
+
+Summary statistics:
+               Year      Duration        Rating          Votes
+count  15503.000000  15503.000000  15503.000000   15503.000000
+mean    1988.094240    123.795265      5.919100     994.118235
+std       25.645665     20.169313      0.990702    8348.028063
+min     1913.000000      2.000000      1.100000       5.000000
+25%     1969.000000    120.000000      6.000000       8.000000
+50%     1992.000000    120.000000      6.000000       8.000000
+75%     2011.000000    129.000000      6.000000      59.000000
+max     2022.000000    321.000000     10.000000  591417.000000
+
+Missing values per column:
+Name        0
+Year        0
+Duration    0
+Genre       0
+Rating      0
+Votes       0
+Director    0
+Actor 1     0
+Actor 2     0
+Actor 3     0
+dtype: int64
+![movie_ratings_distribution](https://github.com/user-attachments/assets/af844ad3-7331-4827-8623-9b38200e487a)
